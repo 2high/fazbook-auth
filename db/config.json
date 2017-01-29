@@ -7,6 +7,6 @@
     "dialect": "postgres"
   },
   "production": {
-  "use_env_variable": "postgresql-tapered-25932"
+  "use_env_variable": "DATABASE_URL"
 }
 }
