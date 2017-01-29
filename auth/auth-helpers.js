@@ -1,12 +1,13 @@
 //function that will use bcrypt to compare passwords
-
 const bcrypt = require('bcryptjs');
 const models = require('../db/models/index');
 
 function comparePass(userPassword, databasePassword) {
   return bcrypt.compareSync(userPassword, databasePassword);
 }
-
+// If the user try to log in again will show a message
+//This will redirect a logged in user to their user profile
+// page if they're already logged 
 function loginRedirect(req, res, next) {
   if (req.user) return res.status(401).json(
     { status: 'You are already logged in' }
@@ -14,7 +15,9 @@ function loginRedirect(req, res, next) {
 
   return next();
 }
-
+// Create an user and save the password with bycrypt
+//This function enable to create the info for the user
+// and then redirect to the index page
 function createUser(req, res) {
   const salt = bcrypt.genSaltSync();
   const hash = bcrypt.hashSync(req.body.password, salt);
@@ -33,7 +36,8 @@ function createUser(req, res) {
 
 
 
-
+// if the user try to have access to a pge that he doesn't have authorization
+// he will receive a message to log in
 function loginRequired(req, res, next) {
   if (!req.user) return res.status(401).json({ status: 'Please log in' });
 

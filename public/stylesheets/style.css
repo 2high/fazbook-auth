@@ -6,16 +6,52 @@ header {
 header .container h1 {
   font-size: 36px;
 }
+.bg{
+  background-image: url(/img/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
 main{
   flex: 1 0 auto;
 }
 
 footer {
-  background-color: teal;
+  background-color: #212121;
   color: white;
+  padding: 15px;
 }
 
 a {
   color: #00B7FF;
+}
+
+.bla{
+  padding-top: 20px;
+}
+.ble{
+  margin-top: 20%;
+  color: #fff;
+  font-size: 5em;
+}
+.bli{
+  color: #fff;
+  font-size: 2em;
+  background-color: #212121;
+  width: 85%;
+  padding: 10px;
+  margin: 0 auto;
+}
+.blo{
+  font-size: 3em;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+.blu{
+  font-size: 2em;
 }

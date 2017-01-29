@@ -6,6 +6,8 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 // add new modules and files here
 //Passport middleware
+//include session middleware for express
+//Together these middleware will allow us to authenticate users using cookies.
 const session = require('express-session');
 const passport = require('passport');
 
@@ -15,6 +17,9 @@ const userRoutes = require('./routes/user.js');
 const app = express();
 
 // load environment variables
+//itialize dotenv.
+// is a node module that makes it really easy to include environment variables
+//because our cookies require a secret key.
 require('dotenv').config();
 // end new files part1
 
@@ -30,6 +35,8 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 // add new express-session and passport middleware here
+
+//tell express to use our express-session and passport middlewares
 app.use(session({
   secret: process.env.SECRET_KEY,
   resave: false,
@@ -43,6 +50,7 @@ app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // add route middleware here
+//update our routes
 app.use('/', index);
 app.use('/auth', authRoutes);
 app.use('/user', userRoutes);

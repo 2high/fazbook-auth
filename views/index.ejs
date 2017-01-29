@@ -1,14 +1,20 @@
 <% include partials/head.ejs %>
-  <body>
+  <body class="bg">
     <% include partials/header.ejs %>
     <main>
       <div class="container">
-        <p>Hello, this is the main index page!</p>
+        <div class="ble center-align">Welcome to Fazbook-auth</div>
+        <div class="bli center-align">Hello, this is the main index page!</div>
+      </div>
+
+      <!-- <div class="container">
         <p><a href="/auth/register">click here to register</a></p>
         <p><a href="/auth/login">click here to log in</a></p>
         <p><a href="/auth/logout">click here to logout</a></p>
-      </div>
+      </div> -->
     </main>
     <% include partials/footer.ejs %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
   </body>
 </html>

@@ -3,12 +3,12 @@
     <% include ../partials/header.ejs %>
     <main>
       <div class="container">
-        <p>Hello, this is the user profile page!</p>
-        <p><%= user.firstName %></p>
-        <p><%= user.lastName %></p>
-        <p><%= user.email %></p>
-        <p><%= user.dob %></p>
-        <a href="/auth/logout">LOG OUT</a>
+        <div class="blo">Hello, this is the user profile page!</div>
+        <div class="blu"><%= user.firstName %></div>
+        <div class="blu"><%= user.lastName %></div>
+        <div class="blu"><%= user.email %></div>
+        <div class="blu"><%= user.dob %></div>
+        <a class="grey darken-4 z-depth-5 btn" href="/auth/logout">LOG OUT</a>
       </div>
     </main>
     <% include ../partials/footer.ejs %>
