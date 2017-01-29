@@ -7,6 +7,6 @@
     "dialect": "postgres"
   },
   "production": {
-  "use_env_variable": "https://data.heroku.com/datastore/e3e2b357-495d-457b-b93e-336c464f221d"
+  "use_env_variable": "postgres://szqkozskrydtvl:03328fa41362bdc77ec4e42fb93b60dce823ac761b7767a308bdf3ea6e9100d4@ec2-174-129-223-193.compute-1.amazonaws.com:5432/db0ab0kad7bl8i"
 }
 }
