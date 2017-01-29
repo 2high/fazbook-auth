@@ -7,6 +7,6 @@
     "dialect": "postgres"
   },
   "production": {
-  "use_env_variable": "fazbook_auth_development"
+  "use_env_variable": "https://data.heroku.com/datastore/e3e2b357-495d-457b-b93e-336c464f221d"
 }
 }
