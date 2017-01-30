@@ -1,4 +1,8 @@
 const passport = require('passport');
+//assport recognizes that each application has unique authentication requirements.
+// Authentication mechanisms, known as strategies, are packaged as individual modules.
+// Applications can choose which strategies to employ,
+// without creating unnecessary dependencies.
 const LocalStrategy = require('passport-local').Strategy;
 
 const init = require('./passport');
@@ -8,10 +12,13 @@ const authHelpers = require('../auth/auth-helpers');
 const options = {};
 
 init();
-//The user will log in with a username and password. 
+//The user will log in with a username and password.
+//if found , return user details
+// if don't, it will return false or null
 passport.use(new LocalStrategy(options, (username, password, done) => {
   // check to see if the username exists
   models.User.findAll({
+    //check if the username exist
     where: {
       username
     }

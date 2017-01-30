@@ -2,12 +2,13 @@
 const bcrypt = require('bcryptjs');
 const models = require('../db/models/index');
 
+//THis functionc check if the password is the same on the DB
 function comparePass(userPassword, databasePassword) {
   return bcrypt.compareSync(userPassword, databasePassword);
 }
 // If the user try to log in again will show a message
 //This will redirect a logged in user to their user profile
-// page if they're already logged 
+// page if they're already logged
 function loginRedirect(req, res, next) {
   if (req.user) return res.status(401).json(
     { status: 'You are already logged in' }
